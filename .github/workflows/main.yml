@@ -21,13 +21,13 @@ jobs:
 
     - name: Add and commit generated files
       run: |
-        find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec rm -rf {} +
+        find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec git rm -rf {} +
         mv dist/* .
-        ls -lA
-        git add . -f -u
+        git add .
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
+        git status
 
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
