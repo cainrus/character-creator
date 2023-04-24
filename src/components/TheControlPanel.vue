@@ -87,43 +87,43 @@
   </div>
 
 </template>
-<script setup>
+<script setup lang="ts">
   import {useCharacterStore} from "../stores/useCharacterStore";
 
   const cs = useCharacterStore();
 
-  function onColorChange(event) {
-    cs.skinColor = event.target.value;
+  function onColorChange(event: Event) {
+    cs.skinColor = (event.target as HTMLInputElement).value;
   }
-  function onBodyWidthChange(event) {
-    cs.bodyWidth = +event.target.value;
+  function onBodyWidthChange(event: Event) {
+    cs.bodyWidth = +(event.target as HTMLInputElement).value;
   }
-  function onHeadRadiusChange(event) {
-    cs.headRadius = +event.target.value;
-  }
-
-  function onBodyHeightChange(event) {
-    cs.bodyHeight = +event.target.value;
-  }
-  function onHandXOffsetChange(event) {
-    cs.handXOffset = +event.target.value;
+  function onHeadRadiusChange(event: Event) {
+    cs.headRadius = +(event.target as HTMLInputElement).value;
   }
 
-  function onHandYOffsetChange(event) {
-    cs.handYOffset = +event.target.value;
+  function onBodyHeightChange(event: Event) {
+    cs.bodyHeight = +(event.target as HTMLInputElement).value;
   }
-  function onHandHeightChange(event) {
-    cs.handHeight = +event.target.value;
-  }
-
-  function onHandWidthChange(event) {
-    cs.handWidth = +event.target.value;
-  }
-  function onLegWidthChange(event) {
-    cs.legWidth = +event.target.value;
+  function onHandXOffsetChange(event: Event) {
+    cs.handXOffset = +(event.target as HTMLInputElement).value;
   }
 
-  function onLegHeightChange(event) {
-    cs.legHeight = +event.target.value;
+  function onHandYOffsetChange(event: Event) {
+    cs.handYOffset = +(event.target as HTMLInputElement).value;
+  }
+  function onHandHeightChange(event: Event) {
+    cs.handHeight = +(event.target as HTMLInputElement).value;
+  }
+
+  function onHandWidthChange(event: Event) {
+    cs.handWidth = +(event.target as HTMLInputElement).value;
+  }
+  function onLegWidthChange(event: Event) {
+    cs.legWidth = +(event.target as HTMLInputElement).value;
+  }
+
+  function onLegHeightChange(event: Event) {
+    cs.legHeight = +(event.target as HTMLInputElement).value;
   }
 </script>

@@ -7,7 +7,7 @@
     />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useCharacterStore } from "../stores/useCharacterStore";
 const characterStore = useCharacterStore();
 </script>
