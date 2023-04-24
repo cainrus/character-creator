@@ -21,7 +21,9 @@ jobs:
 
     - name: Add and commit generated files
       run: |
-        git add ./dist -f
+        find . -mindepth 1 -type d | grep -vE '^(\./dist|\./.git)' | xargs rm -rf
+        mv dist/* .
+        git add . -f
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
@@ -39,5 +41,5 @@ jobs:
         force: true
         # We have to push from the folder where files were generated.
         # Same were the new repo was initialized in the previous step
-        directory: ./dist
+        directory: .
 
