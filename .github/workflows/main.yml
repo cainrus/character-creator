@@ -21,7 +21,7 @@ jobs:
 
     - name: Add and commit generated files
       run: |
-        find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec git rm -rf {} +
+        find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec git rm -rf --ignore-unmatch {} +
         mv dist/* .
         git add .
         git config --local user.email "action@github.com"
