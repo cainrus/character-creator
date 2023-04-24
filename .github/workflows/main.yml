@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16'
-    - run: yarn
+    - run: yarn ci
     - run: yarn build
 
     - name: Add and commit generated files
@@ -28,7 +28,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
-        git checkout .
 
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
