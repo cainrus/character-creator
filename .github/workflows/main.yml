@@ -24,6 +24,7 @@ jobs:
         find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec git rm -rf --ignore-unmatch {} +
         find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec rm -rf {} +
         mv dist/* .
+        touch .nojekyll
         git add .
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
