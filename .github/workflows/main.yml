@@ -23,7 +23,8 @@ jobs:
       run: |
         find . -mindepth 1 -type d | grep -vE '^(\./dist|\./.git)' | xargs rm -rf
         mv dist/* .
-        git add . -f
+        ls -lA
+        git add . -f -u
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
