@@ -21,7 +21,7 @@ jobs:
 
     - name: Add and commit generated files
       run: |
-        find . -mindepth 1 -type d | grep -vE '^(\./dist|\./.git)' | xargs rm -rf
+        find . -mindepth 1 -maxdepth 1 ! \( -name dist -o -name .git \) -exec rm -rf {} +
         mv dist/* .
         ls -lA
         git add . -f -u
