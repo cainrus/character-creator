@@ -1,4 +1,6 @@
 name: Deploy to GitHub pages
+permissions:
+  contents: write
 on:
   push:
     # this is the branch where you develop your site
